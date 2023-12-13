@@ -27,6 +27,7 @@ from langchain.pydantic_v1 import BaseModel
 from langchain.schema.output_parser import StrOutputParser
 from langchain.schema.runnable import RunnableParallel, RunnablePassthrough
 #from langchain.vectorstores import PathwayVectorStore
+from experimental.janek.langchain.vectorstores import pathway as pw_vs
 
 # If you have a running Pathway Vectorstore instance you can connect to it via client. If not, you can run Vectorstore as follows.
 
@@ -66,8 +67,6 @@ client = pw_vs.PathwayVectorClient(
 retriever = client.as_retriever()
 """
 
-
-from experimental.janek.langchain.vectorstores import pathway as pw_vs
 
 client = pw_vs.PathwayVectorClient(
     host="127.0.0.1", port="8765",
