@@ -2,13 +2,14 @@
 name = "rag-pathway"
 version = "0.0.1"
 description = ""
-authors = []
+authors = ["Jan Chorowski <janek@pathway.com>", "Berke Can Rizai <berke@pathway.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
 langchain = ">=0.0.313, <0.1"
-openai = "^0.28.1"
+openai = ">=1.2.4"
+llm-app = "^0.3.4"
 
 [tool.poetry.group.dev.dependencies]
 langchain-cli = ">=0.0.4"
@@ -18,6 +19,12 @@ sse-starlette = "^1.6.5"
 [tool.langserve]
 export_module = "rag_pathway"
 export_attr = "chain"
+
+[tool.templates-hub]
+use-case = "rag"
+author = "Pathway"
+integrations = ["OpenAI", "Pathway"]
+tags = ["vectordbs"]
 
 [build-system]
 requires = ["poetry-core"]
