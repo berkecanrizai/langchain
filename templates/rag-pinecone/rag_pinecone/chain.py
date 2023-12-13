@@ -37,8 +37,9 @@ vectorstore = Pinecone.from_existing_index(PINECONE_INDEX_NAME, OpenAIEmbeddings
 retriever = vectorstore.as_retriever()
 
 # RAG prompt
-template = """Answer the question based only on the following context:
-{context}
+template = """Answer the question based only on the context given.
+If question can't be answered based on context, tell it can't be inferred.
+Context: {context}
 Question: {question}
 """
 prompt = ChatPromptTemplate.from_template(template)
